@@ -4,7 +4,7 @@ const Tasks = () => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/tasks')
+        fetch('https://calm-garden-99828.herokuapp.com/tasks')
             .then(res => res.json())
             .then(data => {
                 setTasks(data);
@@ -15,7 +15,7 @@ const Tasks = () => {
 
         const proceed = window.confirm("Are you sure??");
         if (proceed) {
-            const url = `http://localhost:5000/task/${id}`;
+            const url = `https://calm-garden-99828.herokuapp.com/task/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
@@ -37,7 +37,7 @@ const Tasks = () => {
         const updatedTask = { complete };
 
         //send data to server
-        const url = `http://localhost:5000/task/${id}`
+        const url = `https://calm-garden-99828.herokuapp.com/task/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

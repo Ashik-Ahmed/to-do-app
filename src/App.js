@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Login/Signup';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Tasks from './components/Tasks/Tasks';
+import AddTask from './components/AddTask/AddTask';
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <Route path='/' element={
           <RequireAuth>
             <Home></Home>
+          </RequireAuth>}></Route>
+        <Route path='/add' element={
+          <RequireAuth>
+            <AddTask></AddTask>
           </RequireAuth>}></Route>
         <Route path='/tasks' element={
           <RequireAuth>
